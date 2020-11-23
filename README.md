@@ -5,5 +5,5 @@
 
 # おおまかな説明
 1.index.html を開く<br>
-2.ボタンがクリックされた後、mbit.js が実行される。<br>
+2.ボタンがクリックされた後、mbit.js が実行される。
 3.mbit.js と pc.js と GetData.html が互いにデータを送る。<br>
