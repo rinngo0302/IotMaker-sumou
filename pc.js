@@ -5,17 +5,6 @@ const PLAYER1 = 1;
 const PLAYER2 = 2;
 const SPECTATOR = -1;
 
-//プレイヤーのデータ
-const player1_exist = "player1_exist";
-const player1_name = "player1_name";
-const player1_sensorData = "player1_sensorData";
-const player1_time = "player1_time";
-
-const player2_exist = "player2_exist";
-const player2_name = "player2_name";
-const player2_sensorData = "player2_sensorData";
-const player2_time = "player2_time";
-
 let player;
 
 let channel;
@@ -31,7 +20,7 @@ onload = async function()
 {
 	// webSocketリレーの初期化
 	var relay = await RelayServer("achex", "chirimenSocket" );
-	getChannel = await relay.subscribe("chirimenMbitSensors");
+	getChannel = await relay.subscribe("TeamA_sumou");
 	console.log("achex web socketリレーサービスに接続しました");
 	getChannel.onmessage = getMessage;
 	sendPlayer();
@@ -102,8 +91,8 @@ function getMessage(msg)
 
 async function sendPlayer()
 {
-	let relay = await RelayServer("achex", "chirimenSocket" );
-	outChannel = await relay.subscribe("chirimenGetPlayer");
+	let relay = await RelayServer("achex", "TeamA_sumou" );
+	outChannel = await relay.subscribe("TeamA_sumouGetPlayer");
 
 	while (true)
 	{

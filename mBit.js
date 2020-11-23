@@ -1,21 +1,7 @@
-// Remote Example1 - reciever
-// for CHIRIMEN with:microbit
-
 //プレイヤーの定数
 const PLAYER1 = 1;
 const PLAYER2 = 2;
 const SPECTATOR = -1;
-
-//プレイヤーのデータ
-const player1_exist = "player1_exist";
-const player1_name = "player1_name";
-const player1_sensorData = "player1_sensorData";
-const player1_time = "player1_time";
-
-const player2_exist = "player2_exist";
-const player2_name = "player2_name";
-const player2_sensorData = "player2_sensorData";
-const player2_time = "player2_time";
 
 
 let microBitBle;
@@ -63,13 +49,13 @@ async function connect()
 	//RelayToSetPlayer();
 	let GettingDataRelay = await RelayServer("achex", "chirimenSocket" );
 	let GettingDataChannel;
-	GettingDataChannel = await GettingDataRelay.subscribe("chirimenGetPlayer");
+	GettingDataChannel = await GettingDataRelay.subscribe("TeamA_sumou");
 
 	GettingDataChannel.onmessage = setGetFlag;
 
 	relay = await RelayServer("achex", "chirimenSocket" );
-	inChannel = await relay.subscribe("chirimenGetPlayer");
-	outChannel = await relay.subscribe("chirimenMbitSensors");
+	inChannel = await relay.subscribe("TeamA_sumouGetPlayer");
+	outChannel = await relay.subscribe("TeamA_sumou");
 
 	for (let i = 0; i < 1000; i++)//データが来るまで待機
 	{
