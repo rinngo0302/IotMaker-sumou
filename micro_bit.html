@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Link for micro:bit</title>
+
+        <!--stylesheet-->
+        <style>
+            #main_title {
+                color: #06b323;
+                font-size: 50px;
+                border-bottom: 1px solid #06b323;
+
+            }
+
+            #sub_tutorial_title {
+                color: #ff9100;
+                font-size: 40px;
+            }
+
+            #sub_tutorial_sub_title {
+                color: #ff0000;
+            }
+
+            #sub_GitHub_title {
+                color: #c900f1;
+                font-size: 40px;
+            }
+
+            #sub_codesand_title {
+                color: #03035e;
+                font-size: 40px;
+            }
+        </style>
+        <!--stylesheet-->
+    </head>
+
+    <body>
+        <h1 id="main_title">micro:bitで使うリンク集</h1>
+
+        <br>
+
+        <ul>
+            <li>
+                <a href="#sub_tutorial_title">チュートリアル</a>
+            </li>
+            <li>
+                <a href="#sub_GitHub_title">GitHub</a>
+            </li>
+            <li>
+                <a href="#sub_codesand_title">CodeSandBox</a>
+            </li>
+        </ul>
+
+        <dl>
+            <dt>
+                <h2 id="sub_tutorial_title">チュートリアル</h2>
+            </dt>
+            <dd>
+                        <ul>
+                            <li>
+                                <h2 id="sub_tutorial_sub_title">チュートリアル</h2>
+                                <ul>
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/">CHIRIMEN with micro:bit チュートリアル</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <h2 id="sub_tutorial_sub_title">Example集</h2>
+                                <ul>
+                                    <li>
+                                        <a href="http://chirimen.org/chirimen-micro-bit/examples/">AllExamples</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li>
+                                <h2 id="sub_tutorial_sub_title">GPIO</h2>
+                                <ul>
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/gpio_starter"><strong>Lチカ(GPIO)</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO1">example_Lチカ</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/gpio_basic#led--onoff-"><strong>マウスクリックで LED の ON/OFF を制御してみる</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO1">example_LED_マウスクリック</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/gpio_basic#c--portread"><strong>スイッチに反応するようにする (port.read()を使ってみる)</strong></a>
+                                    
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/gpio_basic#d--portonchange"><strong>スイッチに反応するようにする (port.onchange())</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO2">example_port.onchange()</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/gpio_basic"><strong>LED のかわりに ギアモータ（ちびギアモータ）を動かしてみる</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO4">example_ギアモータ</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 id="sub_tutorial_sub_title">I2C</h2>
+                                <ul>
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/i2c_starter_sht#sht31"><strong>温度センサ</strong></a>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/i2c_starter#adt7410-example-"><strong>温度センサーのexampleを読んでみる</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C1_ADT7410">example_ADT7410</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/i2c_starter#section-4"><strong>温度センサーの値をドライバーを使わずに読んでみる</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C1b_ADT7410">example_ADT7410(without druver)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/i2c_basic#section-4"><strong>光センサ</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_BH1750">example_BH1750</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/i2c_basic#section-5"><strong>測距センサ</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C3_VL53L0X">example_VL53L0X</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <br>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/i2c_basic#section-6"><strong>加速度、角加速度センサ</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MPU6050">example_MPU6050</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/i2c_basic#i2c--1"><strong>他の I2C モジュールも使ってみる</strong></a>
+                                        <ul>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 id="sub_tutorial_sub_title">IoT</h2>
+                                <ul>
+                                    <li>
+                                        <a href="https://tutorial.chirimen.org/microbit/iot_sensing#section-1"><strong>温度をリモートからモニタする</strong></a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/remote_example1?file=/mbit.js" target="_bend22">example_IoT_micro:bit</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+            </dd>
+
+            <dt>
+                <h2 id="sub_GitHub_title">GitHub</h2>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a href="https://github.com/"><h3>GitHub</h3></a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/yukiharuka9089"><h3>My Profile</h3></a>
+                    </li>
+                </ul>
+            </dd>
+
+            <dt>
+                <h2 id="sub_codesand_title">CodeSandBox</h2>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a href="https://codesandbox.io"><h3>CodeSandBox</h3></a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+</html>
