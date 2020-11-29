@@ -73,7 +73,6 @@ async function connect()
 		await sleep(1);
 	}
 
-
 	if (!getData)//setGetFlagが呼び出されなかったとき(なにもメッセージが来なかった場合)
 	{
 		player = PLAYER1;

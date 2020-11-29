@@ -104,7 +104,7 @@ function getMessage(msg)
 
 async function sendPlayer()
 {
-	let relay = await RelayServer("achex", "TeamA_sumou" );
+	let relay = await RelayServer("achex", "chirimenSocket" );
 	outChannel = await relay.subscribe("TeamA_sumouGetPlayer");
 
 	while (true)
