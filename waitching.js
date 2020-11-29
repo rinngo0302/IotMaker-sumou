@@ -1,5 +1,3 @@
-// Remote Example1 - controller
-
 //Player
 const PLAYER1 = 1;
 const PLAYER2 = 2;
@@ -20,7 +18,7 @@ onload = async function()
 {
 	// webSocketリレーの初期化
 	var relay = await RelayServer("achex", "chirimenSocket" );
-	getChannel = await relay.subscribe("TeamA_sumou");
+	getChannel = await relay.subscribe("chirimenMbitSensors");
 	console.log("achex web socketリレーサービスに接続しました");
 	getChannel.onmessage = getMessage;
 	sendPlayer();
@@ -92,7 +90,7 @@ function getMessage(msg)
 async function sendPlayer()
 {
 	let relay = await RelayServer("achex", "chirimenSocket" );
-	outChannel = await relay.subscribe("TeamA_sumouGetPlayer");
+	outChannel = await relay.subscribe("chirimenGetPlayer");
 
 	while (true)
 	{

@@ -3,7 +3,6 @@ const PLAYER1 = 1;
 const PLAYER2 = 2;
 const SPECTATOR = -1;
 
-
 let microBitBle;
 
 let getData = false;
@@ -49,13 +48,13 @@ async function connect()
 	//RelayToSetPlayer();
 	let GettingDataRelay = await RelayServer("achex", "chirimenSocket" );
 	let GettingDataChannel;
-	GettingDataChannel = await GettingDataRelay.subscribe("TeamA_sumou");
+	GettingDataChannel = await GettingDataRelay.subscribe("chirimenGetPlayer");
 
 	GettingDataChannel.onmessage = setGetFlag;
 
 	relay = await RelayServer("achex", "chirimenSocket" );
-	inChannel = await relay.subscribe("TeamA_sumouGetPlayer");
-	outChannel = await relay.subscribe("TeamA_sumou");
+	inChannel = await relay.subscribe("chirimenGetPlayer");
+	outChannel = await relay.subscribe("chirimenMbitSensors");
 
 	for (let i = 0; i < 1000; i++)//データが来るまで待機
 	{
@@ -72,6 +71,7 @@ async function connect()
 		
 		await sleep(1);
 	}
+
 
 	if (!getData)//setGetFlagが呼び出されなかったとき(なにもメッセージが来なかった場合)
 	{
