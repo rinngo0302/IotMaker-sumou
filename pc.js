@@ -18,12 +18,25 @@ let sending = {
 
 onload = async function()
 {
+	let connectButton = document.getElementById("connect");
+	connectButton.onclick = connect;
 	// webSocketリレーの初期化
 	var relay = await RelayServer("achex", "chirimenSocket" );
 	getChannel = await relay.subscribe("TeamA_sumou");
 	console.log("achex web socketリレーサービスに接続しました");
 	getChannel.onmessage = getMessage;
 	sendPlayer();
+}
+
+let microbit;
+async function connect()
+{	  
+	microBitBle = await microBitBleFactory.connect();
+  	console.log("micro:bitと接続しました");
+  	var gpioAccess = await microBitBle.requestGPIOAccess();
+  	var mbGpioPorts = gpioAccess.ports;
+  	gpioPort0 = mbGpioPorts.get(0);
+  	await gpioPort0.export("out");
 }
 
 let mdata;
