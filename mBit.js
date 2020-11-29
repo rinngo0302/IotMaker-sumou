@@ -1,3 +1,7 @@
+//チャンネル一覧
+const TEAM_A_SUMOU_WITCH_PLAYER = "TEAM_A_SUMOU_WITCH_PLAYER";
+const TEAM_A_SUMOU_PLAYER_DATA = "TEAM_A_SUMOU_PLAYER_DATA";
+
 //プレイヤーの定数
 const PLAYER1 = 1;
 const PLAYER2 = 2;
@@ -48,13 +52,13 @@ async function connect()
 	//RelayToSetPlayer();
 	let GettingDataRelay = await RelayServer("achex", "chirimenSocket" );
 	let GettingDataChannel;
-	GettingDataChannel = await GettingDataRelay.subscribe("chirimenGetPlayer");
+	GettingDataChannel = await GettingDataRelay.subscribe(TEAM_A_SUMOU_WITCH_PLAYER);
 
 	GettingDataChannel.onmessage = setGetFlag;
 
 	relay = await RelayServer("achex", "chirimenSocket" );
-	inChannel = await relay.subscribe("chirimenGetPlayer");
-	outChannel = await relay.subscribe("chirimenMbitSensors");
+	inChannel = await relay.subscribe(TEAM_A_SUMOU_WITCH_PLAYER);
+	outChannel = await relay.subscribe(TEAM_A_SUMOU_PLAYER_DATA);
 
 	for (let i = 0; i < 1000; i++)//データが来るまで待機
 	{
