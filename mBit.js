@@ -89,8 +89,16 @@ async function connect()
 	sendingData();
 }
 
-async function no()
+function getWitchPlayer()
 {
+	
+}
+
+function clickText()
+{
+	let text = document.getElementById("userName");
+
+	text.value = "";
 }
 
 function setGetFlag(msg)

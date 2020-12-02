@@ -33,6 +33,8 @@ onload = async function()
 }
 
 let microbit;
+let gpioPort0;
+let microBitBle;
 async function connect()
 {	  
 	microBitBle = await microBitBleFactory.connect();
@@ -41,6 +43,21 @@ async function connect()
   	var mbGpioPorts = gpioAccess.ports;
   	gpioPort0 = mbGpioPorts.get(0);
   	await gpioPort0.export("out");
+}
+
+function motor0(s) {
+	if(s==true){
+		gpioPort0.write(1);
+	} else {
+		gpioPort0.write(0);
+	}
+}
+function motor1(s) {
+	if(s==true){
+		gpioPort1.write(1);
+	} else {
+		gpioPort1.write(0);
+	}
 }
 
 let mdata;
@@ -89,6 +106,29 @@ function getMessage(msg)
 	accelZ = mdata.sensorData.acceleration.z;
 	let time = mdata.time;
 
+	let acc = {
+		x: accelX,
+		y: accelY,
+		z: accelZ,
+	}
+	
+	var accel = evalAccel(acc);
+	if (accel > 2000) {
+	  //AuserTd.style.backgroundColor = "red";
+	  switch (mdata.witchPlayer) {
+		case PLAYER1:
+		  motor0(true);
+		  break;
+  
+		case PLAYER2:
+		  motor1(true);
+		  break;
+	  }
+	} else {
+	  motor0(false);
+	  motor1(false);
+	}
+
 	usernameT.innerText = mdata.userId;
 	temperatureT.innerText = mdata.sensorData.temperature;
 	brightnessT.innerText = mdata.sensorData.brightness;
@@ -117,4 +157,8 @@ async function sendPlayer()
 
 		await sleep(500);
 	}
+}
+
+function evalAccel(acc) {
+	return Math.abs(acc.x) + Math.abs(acc.y) + 1023 - Math.abs(acc.z);
 }
