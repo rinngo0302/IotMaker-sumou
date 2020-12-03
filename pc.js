@@ -9,10 +9,6 @@ const PLAYER1 = 1;
 const PLAYER2 = 2;
 const SPECTATOR = -1;
 
-let player;
-
-let channel;
-
 let outChannel
 
 let sending = {
@@ -60,7 +56,7 @@ function motor1(s) {
 	}
 }
 
-let mdata;
+//micro:bitの値を格納する変数
 let username;
 let temperature;
 let brightness;
@@ -68,6 +64,7 @@ let button;
 let accelX;
 let accelY;
 let accelZ;
+let acc;
 
 function getMessage(msg)
 {
@@ -87,7 +84,11 @@ function getMessage(msg)
 			setPlayer = "player2";
 			break;
 	}
+}
 
+//センサの値を取得 + 表示
+function getMBitSensor(player)
+{	
 	let usernameT = document.getElementById(setPlayer + "_name");
 	let temperatureT = document.getElementById(setPlayer + "_temperature");
 	let brightnessT = document.getElementById(setPlayer + "_brightness");
@@ -106,27 +107,10 @@ function getMessage(msg)
 	accelZ = mdata.sensorData.acceleration.z;
 	let time = mdata.time;
 
-	let acc = {
+	acc = {
 		x: accelX,
 		y: accelY,
 		z: accelZ,
-	}
-	
-	var accel = evalAccel(acc);
-	if (accel > 2000) {
-	  //AuserTd.style.backgroundColor = "red";
-	  switch (mdata.witchPlayer) {
-		case PLAYER1:
-		  motor0(true);
-		  break;
-  
-		case PLAYER2:
-		  motor1(true);
-		  break;
-	  }
-	} else {
-	  motor0(false);
-	  motor1(false);
 	}
 
 	usernameT.innerText = mdata.userId;
@@ -144,6 +128,26 @@ function getMessage(msg)
 				time: ${time}`;
 
 	console.log("取得");
+}
+
+function moveMotor()
+{
+	var accel = evalAccel(acc);
+	if (accel > 2000) {
+	  //AuserTd.style.backgroundColor = "red";
+	  switch (mdata.witchPlayer) {
+		case PLAYER1:
+		  motor0(true);
+		  break;
+  
+		case PLAYER2:
+		  motor1(true);
+		  break;
+	  }
+	} else {
+	  motor0(false);
+	  motor1(false);
+	}
 }
 
 async function sendPlayer()

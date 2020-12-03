@@ -11,20 +11,6 @@
                 width: auto;
             }
 
-            .tab{
-                background-color: #0069cc;
-                background-size: 100%;
-                color: #ffffff;
-                font-weight: bold;
-                border-radius: 10px;
-                font-size: 30px;
-                width: 200px;
-                margin: 40px;
-            }
-            .tab:hover{
-                background-color: #3a97ee
-            }
-
             #subtitle{
                 padding-left: 30px; 
                 border-radius: 10px 10px 10px 10px;
@@ -74,7 +60,7 @@
                 text-shadow: 1px 1px 2px #000;
             }
 
-                button.button6:hover {
+            button.button6:hover {
                 /* 背景色を明るい青色に指定 */
                 background-color: #24d;
 
@@ -83,10 +69,10 @@
 
             }
             #link:hover{
-                /* 背景色を明るい青色に指定 */
-                background-color: #24d;
+                    /* 背景色を明るい青色に指定 */
+                     background-color: #24d;
 
-                /* 文字色を白色に指定 */
+            /* 文字色を白色に指定 */
                 color: #fff;        
             }
 
@@ -105,16 +91,58 @@
         <table align="center" width="auto" border="0" style="padding: 30px; border-radius: 20px 20px 20px 20px; background-color:rgb(255, 237, 134); font-size: 20px;">
             <tr>
                 <td> 
-                    <table align="left" border="1">
+                    <table align="center" border="0">
                         <tr>
-                            <td class="tab"><a> HOME </a></td>
-                            <td class="tab"><a>参加</a></td>
-                            <td class="tab"><a>観戦</a></td>
-                            <td class="tab"><a>ホスト</a></td>
+                            <td align="left">
+                                <h2 id="subtitle">参加</h2>
+                            </td>
                         </tr>
-                        
                         <tr>
-                            
+                            <td id="introduction" align="left">
+                                <p>Q. どんなゲームですか？</p>
+                                <p>みんなでmicro:bitを持ち寄って、<br>オンライン上で紙相撲が楽しめるゲームです。</p>
+
+                                <p>Q. 誰でもできますか？</p>
+                                <p>はい、もちろん。micro:bitを持っていれば、誰でも、無料で遊べます。</p>
+                            </td>
+                            <td>
+                                <a id="link" href="join.html" target="TeadA_join">参加する</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td align="left">
+                                <br><br><br>
+                                <h2 id="subtitle">観戦</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left"id="introduction">
+                                <p>
+                                    誰かが遊んでいるのを自由に観戦することができます。<br>
+                                </p>
+                            </td>
+                            <td>
+                                <a id="link" href="waitching.html" target="TeamA_waitching"> 観戦 </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td align="left">
+                                <br><br><br>
+                                <h2 id="subtitle">ホスト</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" id="introduction">
+                                <p>
+                                    会場のホストの方はこちらへ<br>
+                                    micro:bitと接続をして、プレイヤーからのデータでモータを動かすことができます。<br>
+                                </p>
+                            </td>
+                            <td>
+                                <a id="link" href="pc.html" target="TeamA_host">ホスト</a>
+                            </td>
                         </tr>
                     </table>
                 </td>
